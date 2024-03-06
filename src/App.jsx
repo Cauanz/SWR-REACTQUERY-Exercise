@@ -1,10 +1,14 @@
-
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SearchNames from "./components/SearchNames";
 
 function App() {
 
+  const queryClient = new QueryClient();
+
   return (
-      <SearchNames />
+      <QueryClientProvider client={queryClient}>
+        <SearchNames />
+      </QueryClientProvider>
   )
 }
 
